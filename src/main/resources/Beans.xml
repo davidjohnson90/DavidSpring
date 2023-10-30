@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--default-init-method="init"-->
+    <!--default-destroy-method="destroy"-->
+
+    <bean id="helloDavid" class="com.david.spring.helloDavid.HelloDavid">
+        <property name="message" value="Hello David"></property>
+    </bean>
+
+    <bean id="studentBean" class="com.david.springExample.Student">
+        <property name="name" value="Arun David Johnson"></property>
+    </bean>
+
+    <bean id="singletonBean" class="com.david.spring.helloDavid.HelloDavid" scope="singleton">
+        <!--        <property name="message" value="Hello David"></property>-->
+    </bean>
+
+    <bean id="prototypeBean" class="com.david.spring.helloDavid.HelloDavid" scope="prototype">
+        <!--        <property name="message" value="Hello David"></property>-->
+    </bean>
+
+    <bean id="beanLifecycle" class="com.david.spring.helloDavid.HelloDavid" init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello David"></property>
+    </bean>
+
+    <bean class="com.david.spring.beans.postProcessors.InitHelloDavid"/>
+</beans>

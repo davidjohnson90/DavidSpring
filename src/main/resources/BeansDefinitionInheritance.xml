@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloParent" class="com.david.spring.beans.definitionInheritance.HelloParent">
+        <property name="message1" value="Message1 from Parent"/>
+        <property name="message2" value="Message2 from Parent"/>
+    </bean>
+    <bean id="helloChild" class="com.david.spring.beans.definitionInheritance.HelloChild" parent="helloParent">
+        <property name="message1" value="Message1 from Child"/>
+        <property name="message3" value="Message3 from Child"/>
+    </bean>
+</beans>
